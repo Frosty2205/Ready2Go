@@ -1,0 +1,40 @@
+{
+  "name": "ready2go",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/SERGIO-GONZALEZ-JIMENEZ/PracticaFinal-SistemasIU#readme",
+  "bugs": {
+    "url": "https://github.com/SERGIO-GONZALEZ-JIMENEZ/PracticaFinal-SistemasIU/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SERGIO-GONZALEZ-JIMENEZ/PracticaFinal-SistemasIU.git"
+  },
+  "license": "ISC",
+  "author": "powerRangers",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server.mjs",
+    "start-sv": "/home/ready2go/.nvm/versions/node/v24.14.1/bin/npm i && nodemon --exec /home/ready2go/.nvm/versions/node/v24.14.1/bin/node src/server.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^4.22.0",
+    "@xenova/transformers": "^2.17.2",
+    "axios": "^1.15.0",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "googleapis": "^171.4.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.1.1",
+    "multer": "^2.1.1",
+    "socket.io": "^4.8.3",
+    "yarn": "^1.22.22"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

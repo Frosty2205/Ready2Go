@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+  </head>
+  <body>
+    <h1>Logs de ejecucion</h1>
+    <h2>Baja hasta abajo para los ultimos</h2>
+    <div id="logs" style="white-space: pre-wrap;">
+      {%data%}
+    </div>
+
+    <script>
+      window.addEventListener('load', function() {
+        let height = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
+                       document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
+        document.documentElement.scrollTop = height;
+      });
+    </script>
+  </body>
+</html>
