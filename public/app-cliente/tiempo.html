@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>El Tiempo | Ready2Go</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="pantalla">
+    <header class="cabecera">
+        <div class="cabecera-centro">
+            <h1 class="web">Ready2Go</h1>
+        </div>
+
+        <div class="cabecera-derecha">
+            <a href="ready2go.html" class="boton-logout">Volver al inicio</a>
+        </div>
+    </header>
+
+    <main class="principal">
+        <div class="reg" style="text-align: center;">
+            <h2 class="regh2">Consulta el Tiempo</h2>
+
+            <div class="fila" style="justify-content: center; margin-bottom: 20px;">
+                <input type="text" id="input-ciudad" placeholder="Ejemplo: Getafe, Madrid" style="width: 70%; text-align: center; font-size: 16px;">
+                <button id="btn-buscar" class="boton_logout" style="cursor: pointer; border-radius: 10px;">Buscar</button>
+            </div>
+
+            <div id="resultado-tiempo" style="display: none; flex-direction: column; align-items: center; gap: 10px;">
+                <img id="icono-tiempo" src="" alt="Icono clima" style="width: 120px; height: 120px; background-color: var(--color1); border-radius: 50%;">
+                
+                <h1 id="texto-ciudad" style="color: var(--color2); margin: 10px 0 0 0; font-size: 40px;"></h1>
+                <p id="texto-desc" style="color: gray; text-transform: capitalize; margin: 0; font-size: 18px;"></p>
+                
+                <h2 id="texto-temp" style="font-size: 50px; margin: 15px 0; color: var(--color2);"></h2>
+                
+                <div style="display: flex; gap: 30px; justify-content: center; font-size: 16px;">
+                    <p><strong>Sensación:</strong> <span id="texto-sensacion"></span></p>
+                    <p><strong>Humedad:</strong> <span id="texto-humedad"></span></p>
+                </div>
+            </div>
+            
+            <p id="mensaje-error" style="color: red; display: none; font-weight: bold; margin-top: 20px;">No hemos podido encontrar esa ciudad. Revisa cómo está escrita.</p>
+        </div>
+    </main>
+
+    <script src="script/tiempo.js"></script>
+</body>
+</html>

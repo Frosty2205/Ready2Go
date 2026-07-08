@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ready2Go - Login</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body class="acceso">
+    <header class="cabecera">
+      <div class="cabecera-centro">
+        <h1 class="web">Ready2Go</h1>
+      </div>
+    </header>
+
+    <main class="principal">
+      <div class="reg">
+        <h2 class="regh2">Iniciar Sesión</h2>
+
+        <form class="registro" id="formulario-login">
+          <div class="dato">
+            <label for="login-user">Nombre de usuario</label>
+            <input
+              type="text"
+              id="login-user"
+              placeholder="Tu usuario"
+              required
+            />
+          </div>
+
+          <div class="dato">
+            <label for="login-clave">Contraseña</label>
+            <input
+              type="password"
+              id="login-clave"
+              placeholder="Tu contraseña"
+              required
+            />
+          </div>
+
+          <div class="botones">
+            <input type="submit" id="botonInicio" value="Entrar" />
+            <button type="button" id="registro">Regístrate</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="pie">
+      <div class="pie1"><p>Ready2Go - UC3M</p></div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script/login.js"></script>
+  </body>
+</html>

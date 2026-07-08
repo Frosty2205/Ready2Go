@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ready2Go</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body class="pantalla">
+    <header class="cabecera">
+      <div class="cabecera-centro">
+        <h1 class="web">Ready2Go</h1>
+      </div>
+
+      <div class="cabecera-derecha">
+        <div class="perfil">
+          <img
+            id="imagenPerfil"
+            alt=""
+            src="https://via.placeholder.com/150"
+            class="foto-perfil"
+          />
+          <a href="index.html" class="boton-logout" id="logout"
+            >Cerrar sesión</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="contenedores">
+      <div class="tarjeta solo-ordenador" id="tarjeta-objetos">
+        <i class="fa-solid fa-key"></i>
+        <h3>Mis Objetos</h3>
+        <p>Configura lo que no puedes olvidar</p>
+      </div>
+
+      <div class="tarjeta solo-movil" id="tarjeta-anadir-ropa">
+        <i class="fa-solid fa-camera"></i>
+        <h3>Añadir Ropa</h3>
+        <p>Sube prendas a tu armario</p>
+      </div>
+
+      <div class="tarjeta solo-ordenador" id="tarjeta-armario">
+        <i class="fa-solid fa-tshirt"></i>
+        <h3>Stats del Armario</h3>
+        <p>Tus stats de la ropa</p>
+      </div>
+    </main>
+
+    <div id="ventanaObjetos" class="ventana">
+      <div class="ventana-contenido">
+        <button class="boton-cerrar" id="cerrarVentana">&times;</button>
+        <h2 class="regh2">Mis Objetos</h2>
+        <p>Selecciona qué debe detectar la cámara:</p>
+        <div class="lista-objetos">
+          <label
+            ><input type="checkbox" name="objeto" value="llaves" />
+            Llaves</label
+          >
+          <label
+            ><input type="checkbox" name="objeto" value="cartera" />
+            Cartera</label
+          >
+          <label
+            ><input type="checkbox" name="objeto" value="movil" /> Móvil</label
+          >
+          <label
+            ><input type="checkbox" name="objeto" value="gafas" /> Gafas</label
+          >
+        </div>
+
+        <button id="boton-guardar" class="boton-guardar">Guardar</button>
+      </div>
+    </div>
+
+    <div id="ventanaAñadirRopa" class="ventana">
+      <div class="ventana-contenido">
+        <button class="boton-cerrar" id="cerrarAñadir">&times;</button>
+        <h2 class="regh2">Nueva Prenda</h2>
+        <form id="formNuevaRopa">
+          <div class="dato">
+            <input type="text" id="nombreRopa" placeholder="Nombre (ej: Camisa Blanca)" required class="input-form">
+          </div>
+          <div class="dato" style="margin-top: 15px;">
+            <select id="tipoRopa" class="input-form">
+              <option value="abrigo">Abrigo</option>
+              <option value="camiseta">Camiseta</option>
+              <option value="pantalon">Pantalón</option>
+              <option value="zapatos">Zapatos</option>
+            </select>
+          </div>
+          <div class="dato" style="margin-top: 15px;">
+            <input type="file" id="fotoRopa" accept="image/jpeg, image/png" style="display: none;">
+            <label for="fotoRopa" class="input-form" style="display: flex; justify-content: center; align-items: center; gap: 10px; background-color: var(--color1); color: var(--color2); border: 2px dashed var(--color2); cursor: pointer; transition: 0.3s;">
+              <i class="fa-solid fa-camera"></i> Subir Foto
+              <span id="textoBotonFoto">Toca para subir la foto</span>
+            </label>
+            <p id="infoFoto" style="font-size: 10px; color: grey; margin-top: 5px;"></p>
+          </div>
+          <button type="submit" class="boton-guardar">Guardar en Armario</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="ventanaChecklist" class="ventana">
+        <div class="ventana-contenido">
+            <button class="boton-cerrar" id="cerrarChecklist">&times;</button>
+            <h2 style="color: var(--color2);">¡Espera! Te falta algo</h2>
+            <p>He detectado que te vas, pero no veo esto contigo:</p>
+            
+            <ul id="lista-objetos-faltantes" class="checklist-ul">
+                </ul>
+
+            <button id="boton-listo" class="boton-guardar" style="margin-top: 15px;">
+                ¡Ya lo tengo todo!
+            </button>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script/ready2go.js"></script>
+    <script src="script/voice-asistant.js"></script>
+  </body>
+</html>

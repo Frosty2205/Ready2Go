@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ready2Go</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+
+  <body class="acceso">
+    <header class="cabecera">
+      <div class="cabecera-centro">
+        <h1 class="web">Ready2Go</h1>
+      </div>
+    </header>
+    <main class="principal">
+      <div class="reg">
+        <h2 class="regh2">Registro de nuevos usuarios</h2>
+
+        <form class="registro" id="registroformulario">
+          <div class="fila">
+            <div class="dato">
+              <label for="nombre">Nombre Completo</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Nombre completo"
+              />
+            </div>
+            <div class="dato">
+              <label for="username">Nombre de usuario</label>
+
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Nombre de usuario"
+              />
+            </div>
+          </div>
+
+          <div class="fila">
+            <div class="dato">
+              <label for="email">Correo electrónico</label>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Correo electrónico"
+              />
+            </div>
+            <div class="dato">
+              <label for="clave">Contraseña</label>
+              <input
+                type="password"
+                id="clave"
+                name="clave"
+                placeholder="Contraseña"
+              />
+            </div>
+          </div>
+
+          <div class="FotoPerfil">
+            <label for="img">Subir imagen de perfil:</label>
+            <input type="file" id="img" name="img" />
+          </div>
+
+          <input
+            type="submit"
+            id="botonRegistro"
+            value="Guardar datos y acceder"
+          />
+        </form>
+      </div>
+    </main>
+
+    <footer class="pie">
+      <div class="pie1">
+        <p>Ready2Go- UC3M</p>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script/registro.js"></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Configurar Armario | Ready2Go</title>
+    <link rel="stylesheet" href="style/style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="pantalla">
+    <header class="cabecera">
+        <div class="cabecera-centro">
+            <h1 class="web">Ready2Go</h1>
+        </div>
+        <div class="cabecera-derecha">
+            <a href="ready2go.html" class="boton-logout">Volver al inicio</a>
+        </div>
+    </header>
+
+    <main class="principal">
+        <div class="reg contenedor-carrusel">
+            <h2 class="regh2">Tu Armario</h2>
+            
+            <div class="carrusel">
+                <button class="flecha" id="btn-izq">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                
+                <div class="visor-prenda">
+                    <img id="imagen-prenda" src="img/abrigo.png" alt="Prenda de ropa">
+                </div>
+                
+                <button class="flecha" id="btn-der">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="opciones-prenda">
+                <button class="boton-opcion" id="btn-favorito">
+                    <i class="fa-solid fa-heart"></i> Favorito
+                </button>
+                <button class="boton-opcion">
+                    <i class="fa-solid fa-snowflake"></i> Invierno
+                </button>
+                <button class="boton-opcion">
+                    <i class="fa-solid fa-tag"></i> Casual
+                </button>
+            </div>
+
+            <div class="añadir-prenda-container">
+                <button class="boton-opcion" id="btn-abrir-añadir" style="background-color: var(--color2); color: var(--color1); margin-top: 30px;">
+                    <i class="fa-solid fa-plus"></i> Añadir Prenda
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <div class="camara-flotante">
+        <video id="webcam" autoplay playsinline></video>
+        <p>Gestos activados</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="module" src="script/wardrobe-config.js"></script>
+</body>
+</html>

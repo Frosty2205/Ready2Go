@@ -1,0 +1,41 @@
+services:
+  ready2go:
+    image: node:20-bookworm-slim
+    container_name: ready2go
+    restart: always
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3000
+      - NODE_ENV=docker
+      - JWT_SECRET="${JWT_SECRET}"
+      - DB_CONNECTION=mongodb://ready2go:${MONGO_PASSWORD}@mongo/ready2go?authSource=admin
+    working_dir: /app/server
+    volumes:
+      - .:/app
+    command: npm run start
+    ports:
+      - 3000:3000
+
+  mongo:
+    image: mongo:latest
+    container_name: ready2go_db
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=ready2go
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+    
+  vision:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: vision
+    restart: always
+    volumes:
+      - .:/app 
+
+volumes:
+  mongo_data:

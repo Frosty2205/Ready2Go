@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ready2Go</title>
+</head>
+<body>
+
+    <h1>ready2go</h1>
+
+    <div id="cuadro-mensaje">
+        <h2 id="estado">ESPERANDO...</h2>
+        <span id="usuario"></span>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const estado = document.getElementById('estado');
+        const usuario = document.getElementById('usuario');
+
+        socket.on('recognized-user', (data) => {
+            estado.innerText = "Hola!!!!";
+            usuario.innerText = data.username.toUpperCase();
+
+            //a los 5 segundos se borra
+            setTimeout(() => {
+                estado.innerText = "ESPERANDO...";
+                usuario.innerText = "";
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
+
+
+<style>
+
+        :root {
+        --color1:#AFCBFF ;
+        --color2: #0E1C36;
+        --blanquito: #ffffff;
+        }
+
+        body {
+            background-color: var(--color1); 
+            color: var(--color2);         
+            font-family: sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        h1 { font-size: 80px; margin-bottom: 40px; }
+
+        #cuadro-mensaje {
+            background: var(--blanquito);
+            padding: 60px;
+            border-radius: 30px;
+            border: 3px solid var(--color2);
+            text-align: center;
+            box-shadow: var(--color2) 6px 8px 0px;
+            min-width: 400px;
+        }
+
+        #usuario {
+             font-size: 50px; 
+             display: block; 
+             margin-top: 20px; 
+             font-weight: bold;
+              color: var(--color2) 
+            }
+    </style>

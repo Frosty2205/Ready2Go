@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Configuración - Ready2Go</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body class="pantalla">
+    <header class="cabecera">
+      <div class="cabecera-centro">
+        <h1 class="web">Configuración</h1>
+      </div>
+    </header>
+
+    <main class="principal">
+      <div class="reg">
+        <h2 class="regh2">
+          <i class="fa-solid fa-gears"></i> Ajustes de Google Calendar
+        </h2>
+        <p style="text-align: center; font-size: 14px; margin-bottom: 20px">
+          Selecciona el calendario donde Ready2Go leerá tus eventos y registrará
+          nuevas actividades.
+        </p>
+
+        <div class="dato">
+          <label for="calendarSelect"
+            ><i class="fa-solid fa-calendar-check"></i> Calendario Activo</label
+          >
+          <select id="calendarSelect" class="input-form">
+            <option value="">Cargando calendarios...</option>
+          </select>
+        </div>
+
+        <div
+          id="mensajeStatus"
+          style="
+            display: none;
+            text-align: center;
+            margin: 10px;
+            font-weight: bold;
+          "
+        ></div>
+
+        <button id="btnGuardarConfig" class="boton-guardar">Aceptar</button>
+      </div>
+    </main>
+
+    <script src="script/calendar.js"></script>
+  </body>
+</html>
